@@ -4,3 +4,4 @@ for i in range(ord('a'), ord('z') + 1):
         i += 1
         continue
     print("{:c}".format(i), end = "")
+    i += 1
