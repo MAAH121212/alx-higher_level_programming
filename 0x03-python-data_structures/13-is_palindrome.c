@@ -4,6 +4,7 @@
  * palindrom - recursive palind or not
  * @head: head list
  * Return 0 if it is not palindrom
+ * 1 if it's a palindrom
  */
 
 int is_palindrome(listint_t **head)
@@ -18,7 +19,7 @@ int is_palindrome(listint_t **head)
  * @head: head list
  * @end: end list
  */
-int aux_palind(listint_t **head, listint_ t *end)
+int aux_palind(listint_t **head, listint_t *end)
 {
 	if (end == NULL)
 		return (1);
