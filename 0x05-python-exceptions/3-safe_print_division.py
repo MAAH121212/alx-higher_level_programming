@@ -10,4 +10,4 @@ def safe_print_division(a, b):
         if b != 0:
             print("Inside result: {:0.1f}".format(res))
         else:
-             print("Inside result: None")
+            print("Inside result: None")
