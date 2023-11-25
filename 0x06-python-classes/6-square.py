@@ -6,7 +6,7 @@ class Square:
     """Defines the area"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
-        self.position = position  # Set using the property to apply checks
+        self.position = position
 
     @property
     def size(self):
@@ -37,9 +37,9 @@ class Square:
 
     def my_print(self):
         if self.__size == 0:
-            print()
+            print("")
         [print("") for p in range(self.__position[1])]
         for i in range(self.__size):
             [print(" ", end="") for j in range(self.__position[0])]
             [print("#", end="") for k in range(self.__size)]
-            print()
+            print("")
