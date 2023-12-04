@@ -15,6 +15,7 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         return cls(size, size)
+
     @property
     def height(self):
         return self.__height
