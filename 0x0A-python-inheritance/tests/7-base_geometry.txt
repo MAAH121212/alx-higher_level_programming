@@ -66,6 +66,11 @@ integer_validator method float.x value:
     Traceback (most recent call last):
     TypeError: arg must be an integer
 
+integer_validator method string value:
+    >>> bg.integer_validator("Bar", "bar")
+    Traceback (most recent call last):
+    TypeError: Bar must be an integer
+
 integer_validator method bool value:
     >>> bg.integer_validator("zar", True)
     Traceback (most recent call last):
