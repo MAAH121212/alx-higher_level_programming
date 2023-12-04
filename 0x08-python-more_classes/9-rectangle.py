@@ -38,6 +38,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        if size < 0:
+            raise ValueError("size must be >= 0")
         return cls(height=size, width=size)
 
     def area(self):
