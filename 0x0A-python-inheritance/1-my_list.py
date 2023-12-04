@@ -4,6 +4,5 @@
 
 class MyList(list):
     """that prints the list, but sorted (ascending sort)"""
-    def ___init___(self):
+    def print_sorted(self):
         print(sorted(self))
-
