@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """handle area"""
-BaseGeometry = import__('9-rectangle.py').BaseGeometry
+BaseGeometry = __import__('7-base_geometry.py').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
