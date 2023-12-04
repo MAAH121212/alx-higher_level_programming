@@ -12,10 +12,6 @@ class Rectangle:
         self.width = width
         Rectangle.number_of_instances += 1
 
-    @classmethod
-    def square(cls, size=0):
-        return cls(height=size, width=size)
-
     @property
     def height(self):
         return self.__height
@@ -39,6 +35,10 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
+
+    @classmethod
+    def square(cls, size=0):
+        return cls(height=size, width=size)
 
     def area(self):
         return self.__height * self.__width
