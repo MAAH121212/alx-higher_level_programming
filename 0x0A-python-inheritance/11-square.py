@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """square child"""
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
