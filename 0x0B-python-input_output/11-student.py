@@ -22,8 +22,7 @@ class Student:
                 dict_v[k] = v
         return dict_v
 
-
     def reload_from_json(self, json):
         for key, value in json.items():
             if key in self.__dict__:
-                return self.__dict__[key]
+                self.__dict__[key] = value
