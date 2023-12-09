@@ -72,3 +72,15 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".\
             format(type(self).__name__, self.id, self.__x, self.__y,
                    self.__width, self.__height)
+
+    def update(self, id=None, width=None, height=None, x=None, y=None):
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
