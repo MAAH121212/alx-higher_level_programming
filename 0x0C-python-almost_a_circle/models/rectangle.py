@@ -4,6 +4,7 @@
 
 from moduls.base import Base
 
+
 class Rectangle(Base):
     """define a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -11,6 +12,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
+        self.id = id
         super().__init__(id)
 
     @property
@@ -59,3 +61,15 @@ class Rectangle(Base):
 
     def area(self):
         return self.__height * self.__width
+
+    def display(self):
+        string = ""
+        for i in range(self.__height):
+            string += "#" * self.__width + "\n"
+        string = string.rstrip("\n")
+        print(string)
+
+    def __str__(self):
+        return "[{}] ({}) {}/{} - {}/{}".\
+            format(type(self).__name__, self.id, self.__x, self.__y,
+                   self.__width, self.__height)
