@@ -7,11 +7,10 @@ from moduls.base import Base
 class Rectangle(Base):
     """define a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
-        self.__id = id
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -21,6 +20,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         self.__width = width
+        self.validator("width", value, True)
 
     @property
     def height(self):
@@ -29,6 +29,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         self.__height = height
+        self.validator("height", value)
 
     @property
     def x(self):
@@ -37,7 +38,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         self.__x = x
-    
+        self.validator("x", value)
+
     @property
     def y(self):
         return self.__y
@@ -45,3 +47,12 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         self.__y = y
+        self.validator("y", value, False)
+
+    def validator(self, name, value, eq=False):
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+        if eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        elif not eq and value < 0:
+            raise ValueError("{} must be >= 0".format(name))
