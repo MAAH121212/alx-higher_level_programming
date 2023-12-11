@@ -30,3 +30,24 @@ class Base:
         if json_string is None or not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        from models/rectangle import Rectangle
+        from models/square import Square
+        if cls is Rectangle:
+            new = Rectangle(1, 1)
+        elif cls is Square:
+            new = Square(1, 1)
+        else:
+            new = None
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        from os import path
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
+            return []
+        with open(file, "r") as f:
+            return [cls.create(**dicto) for dicto in cls.from_json_string(f.read())]
