@@ -8,89 +8,9 @@ from moduls.base import Base
 class Rectangle(Base):
     """define a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        self.id = id
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        self.id = id
-        super().__init__(id)
-
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, width):
-        self.__width = width
-        self.validator("width", value, True)
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, height):
-        self.__height = height
-        self.validator("height", value)
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, x):
-        self.__x = x
-        self.validator("x", value)
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, y):
-        self.__y = y
-        self.validator("y", value, False)
-
-    def validator(self, name, value, eq=False):
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if eq and value <= 0:
-            raise ValueError("{} must be > 0".format(name))
-        elif not eq and value < 0:
-            raise ValueError("{} must be >= 0".format(name))
-
-    def area(self):
-        return self.__height * self.__width
-
-    def display(self):
-        string = "\n" * self.__y
-        for i in range(self.__height):
-            string += (' ' * self.__x) + ("#" * self.__width) + "\n"
-        print(string, end='')
-
-    def __str__(self):
-        return "[{}] ({}) {}/{} - {}/{}".\
-            format(type(self).__name__, self.id, self.__x, self.__y,
-                   self.__width, self.__height)
-
-    def update(self, id=None, width=None, height=None, x=None, y=None):
-        if id is not None:
-            self.id = id
-        if width is not None:
-            self.width = width
-        if height is not None:
-            self.height = height
-        if x is not None:
-            self.x = x
-        if y is not None:
-            self.y = y
-
-    def update(self, *args, **kwargs):
-        if args:
-            self.__update(*args)
-        elif kwargs:
-            self.__update(**kwargs)
-
-    def to_dictionary(self):
-        return {'x': self.x, 'y': self.y, 'id': self.id,
-                'height': self.height, 'width': self.width}
