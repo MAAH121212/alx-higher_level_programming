@@ -20,7 +20,6 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        self.validator("width", value, True)  # Corrected value <= 0 to True
         self.__width = value
 
     @property
@@ -29,7 +28,6 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        self.validator("height", value)  # Removed unnecessary argument
         self.__height = value
 
     @property
@@ -38,7 +36,6 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
-        self.validator("x", value)  # Removed unnecessary argument
         self.__x = value
 
     @property
@@ -47,5 +44,4 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.validator("y", value, False)  # Corrected False to True
         self.__y = value
