@@ -22,3 +22,19 @@ class Square(Rectangle):
         """Representation"""
         return "[{}] ({}) {}/{} - {}".\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
+
+    def __update(self, id=None, size=None, x=None, y=None):
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
