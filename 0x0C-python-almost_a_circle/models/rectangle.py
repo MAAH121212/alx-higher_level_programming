@@ -77,8 +77,10 @@ class Rectangle(Base):
         """update for args"""
         if id is not None:
             self.id = id
-        if size is not None:
-            self.size = size
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
         if x is not None:
             self.x = x
         if y is not None:
