@@ -74,7 +74,7 @@ class Rectangle(Base):
                    self.__width, self.__height)
 
     def update(self, id=None, size=None, x=None, y=None):
-        """update"""
+        """update for args"""
         if id is not None:
             self.id = id
         if size is not None:
