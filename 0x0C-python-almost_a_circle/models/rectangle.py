@@ -65,6 +65,5 @@ class Rectangle(Base):
         """printing # character"""
         string = "\n" * self.__y
         for i in range(self.__height):
-                string += (' ' * self.__x) + ("#" * self.__width) + "\n"
-
+            string += (' ' * self.__x) + ("#" * self.__width) + "\n"
         print(string, end='')
