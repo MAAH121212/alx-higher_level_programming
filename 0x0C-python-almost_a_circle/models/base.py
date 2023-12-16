@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """semi circle module."""
-
+import json
 
 class Base:
     """Base class module."""
@@ -17,4 +17,5 @@ class Base:
     def to_json_string(list_dictionaries):
         if list_dictionaries is None:
             return "[]"
-        return json.dumps(list_dictionaries)
+        else:
+            return json.dumps(list_dictionaries)
