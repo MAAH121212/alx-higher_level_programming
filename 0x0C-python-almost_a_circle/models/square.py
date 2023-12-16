@@ -9,6 +9,15 @@ class Square(Rectangle):
         """constructor"""
         super().__init__(size, size, x, y, id)
 
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.height = value
+        self.width = value
+
     def __str__(self):
         """Representation"""
         return "[{}] ({}) {}/{} - {}".\
