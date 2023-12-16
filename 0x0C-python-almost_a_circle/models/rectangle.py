@@ -85,6 +85,7 @@ class Rectangle(Base):
             self.y = y
 
     def update(self, *args, **kwargs):
+        """update args nd kwargs"""
         if args:
             self.__update(*args)
         elif kwargs:
