@@ -24,6 +24,7 @@ class Square(Rectangle):
             format(type(self).__name__, self.id, self.x, self.y, self.width)
 
     def __update(self, id=None, size=None, x=None, y=None):
+        """update of args"""
         if id is not None:
             self.id = id
         if size is not None:
@@ -34,6 +35,7 @@ class Square(Rectangle):
             self.y = y
 
     def update(self, *args, **kwargs):
+        """kwargs"""
         if args:
             self.__update(*args)
         elif kwargs:
