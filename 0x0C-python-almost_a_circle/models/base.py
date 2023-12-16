@@ -55,4 +55,4 @@ class Base:
         if not path.isfile(file):
             return []
         with open(file, "r") as f:
-            return [cls.create(**dicto) for dicto in cls.from_json_string(f.read()) ]
+            return [cls.create(**d) for d in cls.from_json_string(f.read())]
