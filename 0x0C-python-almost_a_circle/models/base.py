@@ -2,6 +2,7 @@
 """semi circle module."""
 import json
 
+
 class Base:
     """Base class module."""
     __nb_objects = 0
