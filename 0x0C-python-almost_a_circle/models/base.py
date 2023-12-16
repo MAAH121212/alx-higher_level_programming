@@ -37,6 +37,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        from models.rectangle import Rectangle
+        from models.square import Square
         if cls is Rectangle:
             new = Rectangle(1, 1)
         elif cls is Square:
