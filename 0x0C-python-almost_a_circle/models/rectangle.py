@@ -73,7 +73,7 @@ class Rectangle(Base):
             format(type(self).__name__, self.id, self.__x, self.__y,
                    self.__width, self.__height)
 
-    def update(self, id=None, size=None, x=None, y=None):
+    def __update(self, id=None, size=None, x=None, y=None):
         """update for args"""
         if id is not None:
             self.id = id
@@ -83,3 +83,9 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+
+    def update(self, *args, **kwargs):
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
