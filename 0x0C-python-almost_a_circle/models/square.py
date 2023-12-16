@@ -18,6 +18,7 @@ class Square(Rectangle):
         self.width = value
 
     def __str__(self):
+        """Representation"""
         return "[{}] ({}) {}/{} - {}".\
             format(type(self).__name__, self.id, self.x, self.y, self.width)
 
@@ -40,5 +41,6 @@ class Square(Rectangle):
             self.__update(**kwargs)
 
     def to_dictionary(self):
+        """dictionary"""
         return {'id': self.id, 'x': self.x,
                 'size': self.size, 'y': self.y}
