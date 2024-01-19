@@ -1,2 +1,2 @@
 -- list rows from the table.
-SHOW * FROM `first_table`;
+SELECT * FROM `first_table`;
